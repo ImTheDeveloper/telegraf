@@ -1,6 +1,6 @@
 const debug = require('debug')('telegraf:client')
 const crypto = require('crypto')
-const fetch = require('fetch-cached-dns')(require('node-fetch'))
+const fetch = require('@zeit/fetch-cached-dns')(require('node-fetch'))
 const fs = require('fs')
 const https = require('https')
 const path = require('path')
