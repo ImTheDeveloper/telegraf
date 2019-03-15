@@ -240,6 +240,7 @@ class ApiClient {
     }
 
     debug('HTTP call', method, payload)
+    console.log('HTTP call ' + new Date())
     const buildConfig = includesMedia(payload)
       ? buildFormDataConfig(Object.assign({ method }, payload))
       : buildJSONConfig(payload)
@@ -262,6 +263,7 @@ class ApiClient {
           debug('API call failed', data)
           throw new TelegramError(data, { method, payload })
         }
+        console.log('HTTP call end ' + new Date())
         return data.result
       })
   }
